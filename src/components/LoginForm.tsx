@@ -19,7 +19,14 @@ export const LoginForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-green-50 flex items-center justify-center">
+    <div
+      className="min-h-screen bg-green-50 flex items-center justify-center"
+      style={{
+        backgroundImage: `url('WhatsApp Image 2024-12-04 at 22.44.18_9d0d4b33.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <h2 className="text-2xl font-bold text-green-600 mb-6">Welcome to AgriGuide</h2>
         <form onSubmit={handleSubmit} className="space-y-4">

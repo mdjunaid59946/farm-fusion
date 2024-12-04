@@ -5,6 +5,8 @@ import { LoginForm } from './components/LoginForm';
 import { Home } from './pages/Home';
 import { BasicCrops } from './pages/BasicCrops';
 import { CropDetail } from './components/CropDetail';
+import { About } from './pages/about'; // Importing the About page
+import { Contact } from './pages/Contact'; // Importing the Contact page
 import { useUserStore } from './store/userStore';
 
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
@@ -51,7 +53,7 @@ function App() {
           path="/about"
           element={
             <ProtectedRoute>
-              <div>About Content</div>
+              <About /> {/* Using the About component */}
             </ProtectedRoute>
           }
         />
@@ -59,7 +61,7 @@ function App() {
           path="/contact"
           element={
             <ProtectedRoute>
-              <div>Contact Content</div>
+              <Contact /> {/* Using the Contact component */}
             </ProtectedRoute>
           }
         />

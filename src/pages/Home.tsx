@@ -29,9 +29,16 @@ export const Home = () => {
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="max-w-2xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-          Find the Perfect Crop for Your Location
-        </h1>
+        <header className="flex items-center justify-center mb-8">
+          <img 
+            src="WhatsApp Image 2024-12-05 at 00.08.04_906f752e.jpg" 
+            alt="AgriGuide Logo" 
+            className="w-12 h-12 mr-4"
+          />
+          <h1 className="text-3xl font-bold text-gray-800">
+            Find the Perfect Crop for Your Location
+          </h1>
+        </header>
         
         {!location ? (
           <div className="bg-white p-6 rounded-lg shadow-md">
