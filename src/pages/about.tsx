@@ -46,7 +46,7 @@ export const About = () => {
             <p>{owner.description}</p>
             <a href={owner.instagramLink} target="_blank" rel="noopener noreferrer">
               <img
-                src="instagram-logo.png" // Replace with the correct path to your logo
+                src="instagram logo 1 copy.webp" // Replace with the correct path to your logo
                 alt="Instagram"
                 className="instagram-logo"
               />

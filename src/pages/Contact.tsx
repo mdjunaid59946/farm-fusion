@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './Contact.css'; // For styling
+import './Contact.css';
+import axios from 'axios';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,8 +8,7 @@ export const Contact = () => {
     email: '',
     query: '',
   });
-
-  const [status, setStatus] = useState<string | null>(null);
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -17,25 +17,17 @@ export const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      const response = await fetch('http://localhost:5000/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
 
-      const result = await response.json();
-      if (result.success) {
-        setStatus('Message sent successfully!');
-        setFormData({ name: '', email: '', query: '' }); // Clear form
+    try {
+      const response = await axios.post('http://localhost:5000/send-mail', formData);
+      if (response.status === 200) {
+        setStatusMessage('Your message has been sent successfully!');
       } else {
-        setStatus('Failed to send message. Please try again.');
+        setStatusMessage('Failed to send your message. Please try again later.');
       }
     } catch (error) {
-      console.error(error);
-      setStatus('An error occurred. Please try again later.');
+      console.error('Error sending email:', error);
+      setStatusMessage('An error occurred. Please try again later.');
     }
   };
 
@@ -46,29 +38,29 @@ export const Contact = () => {
         <input
           type="text"
           name="name"
+          placeholder="Your Name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="Your Name"
           required
         />
         <input
           type="email"
           name="email"
+          placeholder="Your Email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Your Email"
           required
         />
         <textarea
           name="query"
+          placeholder="Enter your query here..."
           value={formData.query}
           onChange={handleChange}
-          placeholder="Your Query"
           required
         />
         <button type="submit">Send</button>
       </form>
-      {status && <p className="status-message">{status}</p>}
+      {statusMessage && <p className="status-message">{statusMessage}</p>}
     </div>
   );
 };
