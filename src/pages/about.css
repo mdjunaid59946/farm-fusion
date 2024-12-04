@@ -19,9 +19,11 @@
   }
   
   .owner-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Make images circular */
+    object-fit: cover; /* Ensure proper scaling */
+    margin: 0 auto;
   }
   
   .owner-card h3 {
@@ -35,7 +37,9 @@
   }
   
   .owner-card a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
     text-decoration: none;
     color: #007bff;
@@ -45,5 +49,11 @@
   .owner-card a:hover {
     color: #0056b3;
     text-decoration: underline;
+  }
+  
+  .instagram-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; /* Spacing between logo and text */
   }
   

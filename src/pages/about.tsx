@@ -4,28 +4,28 @@ import './About.css';
 export const About = () => {
   const owners = [
     {
-      name: "Owner 1",
-      description: "Owner 1 is a passionate individual with a deep interest in sustainable agriculture and technology.",
-      imagePath: "/images/owner1.jpg",
-      instagramLink: "https://instagram.com/owner1",
+      name: "Shaswat Mishra",
+      description: "BE In CSE-Artificial Intelligence",
+      imagePath: "WhatsApp Image 2024-12-05 at 01.45.58_3971687a.jpg",
+      instagramLink: "https://www.instagram.com/shaswat9692/profilecard/?igsh=c2tjbmVodm9yeDE2",
     },
     {
-      name: "Owner 2",
-      description: "Owner 2 specializes in crop research and has a decade of experience in agricultural innovation.",
-      imagePath: "/images/owner2.jpg",
-      instagramLink: "https://instagram.com/owner2",
+      name: "Mohamed Junaid",
+      description: "BE In CSE-Artificial Intelligence",
+      imagePath: "WhatsApp Image 2024-12-05 at 01.46.59_cb505a82.jpg",
+      instagramLink: "https://www.instagram.com/mdjunaid59946?igsh=bzg3NHd0Ynh5ODg1",
     },
     {
-      name: "Owner 3",
-      description: "Owner 3 is a technology enthusiast focusing on the intersection of AI and agriculture.",
-      imagePath: "/images/owner3.jpg",
-      instagramLink: "https://instagram.com/owner3",
+      name: "Sai Harini",
+      description: "BE In CSE-Artificial Intelligence",
+      imagePath: "WhatsApp Image 2024-12-05 at 01.47.49_24e70900.jpg",
+      instagramLink: "https://www.instagram.com/sai_harini_10/profilecard/?igsh=ZWt1bXpoOHhma2c4",
     },
     {
-      name: "Owner 4",
-      description: "Owner 4 is dedicated to educating farmers about best practices in farming and crop management.",
-      imagePath: "/images/owner4.jpg",
-      instagramLink: "https://instagram.com/owner4",
+      name: "Satya Pravinya",
+      description: "BE In CSE-Artificial Intelligence",
+      imagePath: "WhatsApp Image 2024-12-05 at 01.48.17_1f57cbb7.jpg",
+      instagramLink: "https://www.instagram.com/satya_pravinya/profilecard/?igsh=Mmo4ZzA0M282bm1j",
     },
   ];
 
@@ -45,6 +45,11 @@ export const About = () => {
             <h3>{owner.name}</h3>
             <p>{owner.description}</p>
             <a href={owner.instagramLink} target="_blank" rel="noopener noreferrer">
+              <img
+                src="instagram-logo.png" // Replace with the correct path to your logo
+                alt="Instagram"
+                className="instagram-logo"
+              />
               Follow on Instagram
             </a>
           </div>
