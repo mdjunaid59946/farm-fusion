@@ -35,7 +35,7 @@ export const About = () => {
       <p>
         Welcome to our website! We aim to revolutionize the agricultural industry by providing insights, tools, and
         technology to empower farmers and agricultural enthusiasts. Our team is committed to delivering the best
-        resources for crop management and farmingg solutions.
+        resources for crop management and farmingg solutionss.
       </p>
       <h2>Meet Our Team</h2>
       <div className="owners-container">
