@@ -22,7 +22,7 @@ export const LoginForm = () => {
     <div
       className="min-h-screen bg-green-50 flex items-center justify-center"
       style={{
-        backgroundImage: `url('WhatsApp Image 2024-12-04 at 22.44.18_9d0d4b33.jpg')`,
+        backgroundImage: `url('WhatsApp Image 2024-12-05 at 08.11.16_72af5d17.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
