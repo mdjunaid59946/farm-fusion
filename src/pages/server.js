@@ -1,6 +1,6 @@
 const express = require('express');
-const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 const cors = require('cors');
 
 const app = express();
@@ -10,36 +10,39 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// Nodemailer Configuration
+// Email configuration
 const transporter = nodemailer.createTransport({
-  service: 'Gmail', // Use Gmail or other email services
+  service: 'gmail', // Correct service provider (Gmail in this case)
   auth: {
-    user: 'your-email@gmail.com', // Replace with the owner's email
-    pass: 'your-email-password', // Replace with the email's app password
+    user: 'rmmjsm@gmail.com', // Replace with your email
+    pass: 'farmfusion@4', // Replace with your app password (not your regular email password)
   },
 });
 
-// Endpoint to send email
-app.post('/send-email', (req, res) => {
+// POST route to send emails
+app.post('/send-mail', (req, res) => {
   const { name, email, query } = req.body;
 
   const mailOptions = {
-    from: email,
-    to: 'owner-email@gmail.com', // Replace with the owner's email
-    subject: `Query from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\n\nQuery:\n${query}`,
+    from: 'rmmjsm@gmail.com', // Replace with your email
+    to: 'shaswatmishra5533@gmail.com', // Replace with the email to receive queries
+    replyTo: email,
+    subject: `New Query from ${name}`,
+    text: `You have received a new query:\n\nName: ${name}\nEmail: ${email}\nQuery: ${query}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.error(error);
-      return res.status(500).json({ success: false, message: 'Failed to send email' });
+      console.error('Error sending email:', error);
+      res.status(500).send('Error sending email');
+    } else {
+      console.log('Email sent:', info.response);
+      res.status(200).send('Email sent successfully');
     }
-    res.status(200).json({ success: true, message: 'Email sent successfully!' });
   });
 });
 
-// Start Server
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
